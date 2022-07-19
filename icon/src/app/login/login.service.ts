@@ -23,4 +23,10 @@ export class LoginService {
       observe: 'response',
     });
   }
+
+  getasset() {
+    return this.http.get(
+      'https://next.fugamusic.com/api/v1/assets?page=0&page_size=15'
+    );
+  }
 }
