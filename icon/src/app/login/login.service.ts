@@ -11,7 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
-  getloginapi(name: any) {
+  getLogin(name: any) {
     // const headerDict = {
     //   'Content-Type': 'application/json',
     //   'access-control-expose-headers': 'Set-Cookie',
@@ -26,7 +26,7 @@ export class LoginService {
     });
   }
 
-  getasset() {
+  getAsset() {
     const headerDict = {
       samplecookie: `${this.cookie}`,
     };

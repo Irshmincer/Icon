@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     password: ['ILoveAudiotube1', Validators.required],
   });
   constructor(
-    private login: LoginService,
+    private service: LoginService,
     private route: Router,
     private fb: FormBuilder,
     private cookieService: CookieService
@@ -27,13 +27,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  getlogin() {
+  login() {
     const form = {
       name: 'Scotty san',
       password: 'ILoveAudiotube1',
     };
-    this.login.getloginapi(form).subscribe((x) => {
-      console.log(x.headers);
+    this.service.getLogin(form).subscribe((x) => {
+      console.log('Headers List');
+
+      console.log('content-type =' + x.headers.get('Content-type'));
+      console.log('Setcookie value = ' + x.headers.get('Set-Cookie'));
+
       console.log(this.cookieValue);
       this.route.navigate(['/assetList']);
     });

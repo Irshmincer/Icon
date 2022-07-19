@@ -11,11 +11,11 @@ export class AssetListComponent implements OnInit {
   constructor(private service:LoginService) { }
 
   ngOnInit(): void {
-  this.getassetvalues()
+  this.getAssetList()
   }
 
-  getassetvalues(){
-    this.service.getasset().subscribe(x=>console.log(x))
+  getAssetList(){
+    this.service.getAsset().subscribe(x=>console.log(x))
   }
 
 }
