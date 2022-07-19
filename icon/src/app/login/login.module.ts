@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
@@ -21,5 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     ReactiveFormsModule,
   ],
+  providers: [CookieService],
 })
 export class LoginModule {}
