@@ -12,8 +12,8 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
   cookieValue!: string;
   registration = this.fb.group({
-    email: ['sathish', Validators.required],
-    password: ['ILoveAudiotube1', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
   });
   constructor(
     private service: LoginService,
