@@ -1,0 +1,64 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(253, 253, 253);
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: #56cc82 !important;
+    ;
+}
+
+.icon {
+    color: #56cc82;
+}
+
+img {
+    color: #56cc82;
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+h6 {
+    font-size: 1.25rem;
+    font-family: Nunito Sans, sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.newone {
+    flex: 0 0 auto;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #eee;
+    margin-top: 10px;
+}
+
+mat-dialog-container {
+    background: white;
+}
+
+span {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Nunito Sans, sans-serif;
+    font-weight: 400;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead th {
+    border-bottom: 1px solid #000;
+}
+
+
+::ng-deep .mat-form-field-label {
+    color: #000 !important;
+}

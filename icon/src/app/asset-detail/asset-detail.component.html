@@ -1,0 +1,539 @@
+<app-navbar></app-navbar>
+
+<div class="whitePanel">
+  <span class="example-spacer"></span>
+  <mat-icon>more_vert</mat-icon>
+
+  <div></div>
+</div>
+
+<div style="margin-top: 20px;margin-left:10rem; font-family: Nunito Sans,sans-serif;">Catalog > Assets > Test</div>
+
+<div class="v-top"></div>
+<div class="v-top"></div>
+
+<div class="MainPanel" >
+  <div class="insideMainPanel "   >
+    <div class="text" >
+      <div>
+        <h3>Test</h3>
+      </div>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="rightText">
+      <h6>ISRC</h6>
+    </div>
+  </div>
+
+  <div class="v-top"></div>
+
+  <div class="audio">
+    <h3>Audio Files</h3>
+    <div class="v-top"></div>
+    <mat-accordion color="primary">
+      <mat-expansion-panel class="mat-expansion-panel mat-elevation-z0"
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+        <mat-expansion-panel-header class="white mat-expansion-panel-header">
+          <mat-panel-title class="white"><mat-icon class="play-icon ">play_circle_filled</mat-icon>
+           <span style="margin-left:20px ;     color: #616161;">Stereo</span>  </mat-panel-title>
+          <mat-panel-description class="grey">
+            
+              {{panelOpenState ? '' : 'Audio 44.1 kHz 16 bits'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div 
+     class="expansionInside"> 
+          <div  class="inside1">
+            <div class="inside2">
+              <div  class="inside3">
+              <div>
+
+                <div  class="inside4">
+                  <span  class="inside5">Audio Files</span>
+                </div>
+                <div class="inside6">
+                  <span class="inside7">file_example_WAV_5MG.wav</span>
+                </div>
+
+                <div class="inside8">
+                  <span  class="inside9">Uploaded on 7/24/2022</span>
+                  <div>
+
+                    <img src="../../assets/images/upload.svg">
+                    <img src="../../assets/images/download.svg">
+                  </div>
+                </div>
+
+                
+                <div class="inside10">
+                  <span class="inside11">3.78 MB</span>
+                </div>
+              </div>
+              </div>
+              <div  class="right_side">
+                <div >
+                  <div> <h3 class="right_side_1">Quality</h3></div>
+                  <div> <p class="right_side_2">Audio 44.1 kHz 16 bits
+                  </p></div>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="v-top"></div>
+    <div class="dolby">
+      
+        <div >
+
+          <img class="img" src="../../assets/images/dolby.svg">
+          <h2>Dolby Atoms</h2>
+          <span style="flex: 0.5;"></span>
+          <div> <span class="v-3top">No File</span>
+            <img  style="width: 24px; height: 24px; margin-top: 4px;"src="../../assets/images/upload.svg"><span class="v-3top margin-left">Upload Dolby Atoms File</span></div>
+         
+        </div>
+        
+    </div>
+
+  </div>
+
+  <div class="v-top"></div>
+  <div class="artist">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header class="mat-expansion-panel-header">
+          <mat-panel-title class="title"> 
+           Artist
+          </mat-panel-title>
+          <mat-panel-description>
+            
+            <mat-icon style="margin-left:70rem ;margin-top: 0; margin-right: 0; color:#56cc82">add</mat-icon>
+           <span>ADD ARTIST</span> 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div style="   
+        
+        font-size: 12px;">
+          <span style="         color:black;
+         ">There is no artist set for this product</span>
+        </div>
+        
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+ 
+
+  <div class="v-top"></div>
+
+  <div class="metadata">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header  class="mat-expansion-panel-header">
+          <mat-panel-title class="title"> Metadata </mat-panel-title>
+        </mat-expansion-panel-header>
+        <h2>Main</h2>
+        <div class="formfield">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput class="white" value="Test">
+          </mat-form-field>
+
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Display Artists</mat-label>
+            <input matInput  />
+          </mat-form-field>
+    
+          <div class="v-left"></div>
+    
+          <mat-form-field appearance="fill">
+            <mat-label>Track Version</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>ISRC</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </div>
+
+        <div class="formfield">
+          <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput class="white" value="Test">
+          </mat-form-field>
+
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Display Artists</mat-label>
+            <input matInput  />
+          </mat-form-field>
+    
+        
+        </div>
+        <h2>Asset copyright</h2>
+        <div class="formfield">
+          <mat-form-field appearance="fill">
+            <mat-label>
+              ℗ Year</mat-label>
+            <input matInput class="white" value="Track">
+          </mat-form-field>
+
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill" style="width: 25rem;">
+            <mat-label>
+              ℗ Line </mat-label>
+            <input matInput  />
+          </mat-form-field>
+        </div>
+          <h2>Genre</h2>
+        <div class="formfield">
+            <mat-form-field appearance="fill">
+              <mat-label>Genre</mat-label>
+              <input matInput class="white" required>
+            </mat-form-field>
+  
+            <div class="v-left"></div>
+            <mat-form-field appearance="fill">
+              <mat-label>Sub Genre</mat-label>
+              <input matInput  />
+            </mat-form-field>
+      
+            <div class="v-left"></div>
+      
+            <mat-form-field appearance="fill">
+              <mat-label>Alternate Genre</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <div class="v-left"></div>
+            <mat-form-field appearance="fill">
+              <mat-label>Alternate SubGenre</mat-label>
+              <input matInput />
+            </mat-form-field>
+        </div>
+          <h2>Lyrics</h2>
+        <div class="formfield">
+            <mat-form-field appearance="fill">
+              <mat-label>Lyrics</mat-label>
+              <input matInput />
+            </mat-form-field>
+        </div>
+
+        <h2>Playtime</h2>
+        <div class="formfield">
+          <mat-form-field appearance="fill">
+            <mat-label>Playtime</mat-label>
+            <input matInput class="white" value="00:29 (29 secs)">
+          </mat-form-field>
+
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Preview Start</mat-label>
+            <input matInput  value="0 Secs"/>
+          </mat-form-field>
+         
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Preview Length</mat-label>
+            <input matInput  value="29 Secs"/>
+          </mat-form-field>
+        </div>
+
+          <h2>Language</h2>
+        <div class="formfield">
+          <mat-form-field appearance="fill">
+            <mat-label>Metadata Language</mat-label>
+            <input matInput class="white" value="English">
+          </mat-form-field>
+
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Explicit Content</mat-label>
+            <input matInput  value="No Explicit"/>
+          </mat-form-field>
+         
+          <div class="v-left"></div>
+          <mat-form-field appearance="fill">
+            <mat-label>Audio Language</mat-label>
+            <input matInput  required/>
+          </mat-form-field>
+    
+          
+        
+
+        </div>
+     
+      </mat-expansion-panel>
+    </mat-accordion>
+
+
+    <div class="v-top"></div>
+
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title"> Other </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr">
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Recording Year</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Recording Location</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Rights Holder Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Country Of Recording</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Country Of Commissioning</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Right Ownership Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+         
+    
+          
+
+          <mat-form-field appearance="fill">
+            <mat-label>Rights Contract Begin Date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  
+    <div class="v-top"></div>
+
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title"> Extra Fields </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr">
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 1</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 2</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 3</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 4</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 5</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 6</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 7</mat-label>
+            <input matInput />
+          </mat-form-field>
+    
+          <mat-form-field style="width: 20em" appearance="fill">
+            <mat-label>Extra Field 8</mat-label>
+            <input matInput />
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" style="    width: 18rem;
+          ">
+            <mat-label>Extra Field 9</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" style="    width: 18rem;
+          ">
+            <mat-label>Extra Field 9</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+     
+
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="v-top"></div>
+  <div class="artist">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header class="mat-expansion-panel-header">
+          <mat-panel-title class="title"> 
+           Contributors
+          </mat-panel-title>
+          <mat-panel-description>
+            
+            <mat-icon style="margin-left:65rem ;margin-top: 0; margin-right: 0; color:#56cc82">add</mat-icon>
+           <span>ADD CONTRIBUTORS</span> 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div style="   
+        
+        font-size: 12px;">
+          <span style="         color:black;
+         "></span>
+        </div>
+        
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="v-top"></div>
+  <div class="artist">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header class="mat-expansion-panel-header">
+          <mat-panel-title class="title"> 
+           Publishers
+          </mat-panel-title>
+          <mat-panel-description>
+            
+            <mat-icon style="margin-left:67rem ;margin-top: 0; margin-right: 0; color:#56cc82">add</mat-icon>
+           <span>ADD PUBLISHERS</span> 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div style="   
+        
+        font-size: 12px;">
+          <span style="         color:black;
+         "></span>
+        </div>
+        
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+
+  <div class="v-top"></div>
+  <div class="terriotry ">
+
+    <mat-accordion class="accordion" multi>
+  <mat-expansion-panel class="expansion" [expanded]="true">
+    <mat-expansion-panel-header class="mat-expansion-panel-header">
+      <mat-panel-title class="title"> Territory-based Custom Pricing  </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    
+    <div style="    margin-right: -24px;
+    margin-left: -24px;">
+
+
+
+      <table
+     
+        style="width: 100% ;"
+        mat-table
+        [dataSource]="dataSource3"
+        
+      >
+        <ng-container matColumnDef="language">
+          <th mat-header-cell *matHeaderCellDef>LANGUAGE</th>
+          <td mat-cell *matCellDef="let element">{{ element.language }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="AssetTitle">
+          <th mat-header-cell *matHeaderCellDef>ASSET TITLE</th>
+          <td mat-cell *matCellDef="let element">{{ element.AssetTitle }}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="TrackVersion">
+          <th mat-header-cell *matHeaderCellDef>TRACK VERSION</th>
+          <td mat-cell *matCellDef="let element">{{ element.TrackVersion }}</td>
+        </ng-container>
+  
+        
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns3"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns3"></tr>
+      </table>
+      
+      <div class="white flex" *ngIf="dataSource3.length === 0">No items available</div>
+
+    </div>
+    
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<div class="v-top"></div>
+  <div class="artist">
+    <mat-accordion class="accordion" multi>
+      <mat-expansion-panel class="expansion" [expanded]="true">
+        <mat-expansion-panel-header class="mat-expansion-panel-header">
+          <mat-panel-title class="title"> 
+           Tags
+          </mat-panel-title>
+          <mat-panel-description>
+            
+            <mat-icon style="margin-left:70rem ;margin-top: 0; margin-right: 0; color:#56cc82">add</mat-icon>
+           <span>ADD TAG</span> 
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div style="   
+        
+        font-size: 12px;">
+          <span style="         color:black;
+         ">There is no artist set for this product</span>
+        </div>
+        
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="v-padding"></div>
+  </div>
+ 
+  
+
+  
+
+
+</div>
+
+

@@ -12,3 +12,21 @@
     font-size: 2rem;
     color: lightgray;
 }
+table {
+    width: 80%;
+    margin-left: 13em;
+    margin-top: 5em;
+    background-color: white;
+}
+
+td,
+th {
+    border-bottom-color: #e2e2e2;
+    color: black
+}
+
+.heading {
+    margin-top: 3em;
+    margin-left: 13em;
+    font-family: Nunito Sans;
+}

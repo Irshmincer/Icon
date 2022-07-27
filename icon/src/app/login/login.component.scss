@@ -46,9 +46,25 @@ mat-form-field {
 
 mat-card-content {
     padding: 20px 40px 40px;
-    background-color: #fff;
-
-}
+    background-color: rgb(248, 248, 248);
+    
+    }
+    
+    // mat-icon-stepper selected color change 
+    
+    
+    //input outline color
+    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: rgb(0, 0, 0) !important;
+        // opacity: 1!important;
+    }
+    
+    // mat-label normal state style
+    ::ng-deep .mat-form-field-label {
+        color: rgba(0, 0, 0, .6) !important;
+        // color: $mainColor!important;
+    
+    }
 
 
 
@@ -58,5 +74,5 @@ mat-card-content {
     // flex-direction: column;
     // align-items: flex-start;
     justify-content: center;
-    background-color: rgb(255, 255, 255);
+    background-color: #eee;
 }

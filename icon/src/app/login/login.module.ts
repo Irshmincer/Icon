@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
 import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from './login.service';
+import axios, { Axios } from 'axios';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
@@ -22,6 +24,6 @@ import { CookieService } from 'ngx-cookie-service';
     MatCardModule,
     ReactiveFormsModule,
   ],
-  providers: [CookieService],
+  providers: [CookieService, LoginService],
 })
 export class LoginModule {}
