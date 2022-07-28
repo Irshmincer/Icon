@@ -101,6 +101,7 @@ mat-icon {
 
 .white {
     color: black;
+    font-family: Proxima Soft;
 }
 
 .grey {
@@ -118,7 +119,7 @@ mat-icon {
 .play-icon {
     margin: 0;
     margin-left: 10px;
-    color: #56cc82
+    color: #000000;
 }
 
 .formfield {
@@ -126,6 +127,7 @@ mat-icon {
 
     mat-form-field {
         width: 18em;
+        color: black;
     }
 
 
@@ -133,12 +135,12 @@ mat-icon {
 
 ::ng-deep .mat-form-field-underline,
 ::ng-deep .mat-form-field-ripple {
-    background-color: #56cc82 !important;
+    background-color: black !important;
 }
 
 ::ng-deep .mat-form-field-underline::before,
 ::ng-deep .mat-form-field-ripple {
-    background-color: #56cc82 !important;
+    background-color: black !important;
 }
 
 ::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
@@ -155,7 +157,7 @@ mat-icon {
 }
 
 mat-datepicker-toggle {
-    color: #56cc82 !important;
+    color: #000000 !important;
 }
 
 .expansionInside {
@@ -185,6 +187,7 @@ mat-datepicker-toggle {
 
                     .inside5 {
                         color: #616161;
+                        font-weight: 400;
                     }
                 }
 
@@ -264,7 +267,7 @@ mat-datepicker-toggle {
         }
 
         h2 {
-            margin-top: 10px;
+            margin-top: 2px;
             margin-left: 20px;
             color: #616161;
             font-size: 12px;
@@ -284,7 +287,7 @@ mat-datepicker-toggle {
 
 .margin-left {
     margin-left: 3px;
-    color: green;
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
@@ -320,18 +323,6 @@ th {
 
 }
 
-// .whitePanel {
-//     position: sticky;
-//     top: 50px;
-// }
-
-// .insideMainPanel {
-//     position: sticky;
-//     top: 50px;
-// }
-
-
-
 
 .terriotry {
 
@@ -348,10 +339,12 @@ th {
 
 h2 {
     color: #616161;
-    font-size: 13px;
-    font-family: Nunito Sans, sans-serif;
-    font-weight: 600;
-    line-height: 1.2;
+}
+
+.label {
+    color: #808080;
+    font-family: 'NTR', sans-serif;
+    font-size: 20px;
 }
 
 
@@ -370,10 +363,38 @@ h2 {
 
 
 .title {
-    color: #424242;
-    font-size: 15px;
-    font-family: Nunito Sans, sans-serif;
-    font-weight: 600;
-    line-height: 1.167;
+    color: black;
+    
+        font-size: 20px;
+        font-family: 'Bebas Neue', cursive;
     margin-left: 20px;
+}
+.value {
+    font-family: Proxima Soft;
+    font-size: 24px;
+}
+
+.heading {
+    color: black;
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+.text {
+    font-family: 'NTR', sans-serif;
+    font-size: 20px;
+}
+
+.main {
+    font-size: 20px;
+
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 0;
+}
+
+
+.mainheading {
+    margin-left: 10rem;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
 }

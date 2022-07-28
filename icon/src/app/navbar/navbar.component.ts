@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { UploadAssetComponent } from './upload-asset/upload-asset.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { UploadAssetComponent } from './upload-asset/upload-asset.component';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private route: Router) {}
 
   dialog_create_asset() {
     this.dialog.open(UploadAssetComponent, {
@@ -16,6 +17,14 @@ export class NavbarComponent implements OnInit {
       height: 'auto',
       panelClass: 'padding',
     });
+  }
+
+  navToHomePage() {
+    this.route.navigate(['/dashboard']);
+  }
+
+  navToLogin() {
+    this.route.navigate(['']);
   }
 
   ngOnInit(): void {}

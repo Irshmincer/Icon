@@ -32,7 +32,7 @@ mat-card {
     height: 70px;
     width: 94%;
     padding: 10px;
-    background-color: #56cc82;
+    background-color: #000000;
 }
 
 img {
@@ -50,20 +50,18 @@ mat-card-content {
     
     }
     
-    // mat-icon-stepper selected color change 
+
+                ::ng-deep .mat-form-field-underline,
+                ::ng-deep .mat-form-field-ripple {
+                    background-color: black !important;
+                }
     
-    
-    //input outline color
-    ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-        color: rgb(0, 0, 0) !important;
-        // opacity: 1!important;
-    }
-    
-    // mat-label normal state style
-    ::ng-deep .mat-form-field-label {
-        color: rgba(0, 0, 0, .6) !important;
-        // color: $mainColor!important;
-    
+                ::ng-deep .mat-form-field-underline::before,
+                ::ng-deep .mat-form-field-ripple {
+                    background-color: black !important;
+                }
+  ::ng-deep .mat-form-field-label {
+            color: black !important;
     }
 
 

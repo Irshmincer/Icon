@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { LoginService } from 'src/app/login/login.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { LoginService } from 'src/app/login/login.service';
 })
 export class UploadAssetComponent implements OnInit {
   public invoiceForm!: FormGroup;
-  name: string = '';
-  track: string = '';
+
+  @Input() name: string = '';
+  @Input() track: string = '';
   constructor(private _fb: FormBuilder, private service: LoginService) {}
   ngOnInit() {
     this.invoiceForm = this._fb.group({
@@ -18,15 +19,19 @@ export class UploadAssetComponent implements OnInit {
     });
   }
 
+  selected = 'option2';
+
   get formArr() {
     return this.invoiceForm.get('Rows') as FormArray;
   }
 
+  form = new FormGroup({
+    name: new FormControl(),
+    track: new FormControl(),
+  });
+
   initRows() {
-    return this._fb.group({
-      name: '',
-      track: '',
-    });
+    return this.form;
   }
 
   addNewRow() {
@@ -38,13 +43,15 @@ export class UploadAssetComponent implements OnInit {
   }
 
   onSubmit() {
-    const form = {
-      asset_version: 'Test',
-      name: 'Test',
-      type: 'TRACK',
-    };
-    this.service.getasset(form).subscribe((x) => {
-      console.log(x);
-    });
+    // const form = {
+    //   asset_version: 'Test',
+    //   name: 'Test',
+    //   type: 'TRACK',
+    // };
+    // this.service.getasset(form).subscribe((x) => {
+    //   console.log(x);
+    // });
+    this.name = this.form.value['name'];
+    console.log(this.name);
   }
 }

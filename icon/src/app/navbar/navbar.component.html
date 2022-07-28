@@ -1,6 +1,6 @@
 <mat-toolbar>
     <div>
-        <img class="logo" src="../../assets/images/image.svg" />
+        <img (click)="navToHomePage()" class="logo" src="../../assets/images/image.svg" />
       </div>
     
      
@@ -47,11 +47,12 @@
     <span class="example-spacer"></span>
     
       <button
+
         mat-stroked-button
-        class="button-right-hand-side"
+        class="button-right-hand-side text"
         [matMenuTriggerFor]="create"
       >
-        <mat-icon class="add">add</mat-icon><span class="text"> CREATE</span>
+        <mat-icon class="add ">add</mat-icon><span class="text"> CREATE</span>
       </button>
       <mat-menu class="mat-menu mat-menu-create" #create="matMenu">
        
@@ -65,28 +66,16 @@
     
       </mat-menu>
     
-      <!-- <button mat-mini-fab [matMenuTriggerFor]="settings" class="fab_button">
-        <span class="span">SC</span>
+      <button mat-mini-fab [matMenuTriggerFor]="settings" class="fab_button">
+        <span class="span text">SC</span>
       </button>
     
-      <button mat-button [matMenuTriggerFor]="settings" class="catalog1">
-        <span> Settings</span>
-      </button>
+      
     
       <mat-menu class="mat-menu" #settings="matMenu">
-        <button mat-menu-item><span class="text">Language</span></button>
-        <mat-divider></mat-divider>
-    
-        <button mat-menu-item><span class="text">Bulk Overview</span></button>
-        <button mat-menu-item><span class="text">-Metadata ingestion</span></button>
-        <button mat-menu-item>
-          <span class="text">Analytics configuration</span>
-        </button>
-        <button mat-menu-item><span class="text">Territory groups</span></button>
-        <button mat-menu-item><span class="text">DSP groups</span></button>
-        <button mat-menu-item><span class="text">My Organization</span></button>
-        <button mat-menu-item><span class="text">Logout</span></button>
-      </mat-menu> -->
+        
+        <button mat-menu-item (click)="navToLogin()"><span class="text">Logout</span></button>
+      </mat-menu>
     </mat-toolbar>
 
     <div style="margin-top: 3em;">
