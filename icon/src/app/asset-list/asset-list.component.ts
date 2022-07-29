@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
 
@@ -10,19 +10,26 @@ import { LoginService } from '../login/login.service';
 })
 export class AssetListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'track', 'type', 'ISRC'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   @Input() public resultGridList: Array<any> = [];
   data = [];
-
-  result!: any;
-
-  constructor(private service: LoginService, private router: Router) {}
+  result: any;
+  constructor(private service: LoginService, private router: Router) {
+    const value = this.router.getCurrentNavigation()?.extras.state;
+    this.result = value;
+  }
   @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
 
   ngOnInit(): void {
     //this.getAssetList();
-    this.result = history.state;
-    console.log(this.result);
+
+    ELEMENT_DATA.push({
+      name: this.result['example']['name'],
+      type: this.result['example']['type'],
+      track: this.result['example']['track'],
+      ISRC: '-',
+    });
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
   }
 
   getAssetList() {

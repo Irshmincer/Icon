@@ -18,7 +18,6 @@ import { UploadAssetComponent } from './upload-asset/upload-asset.component';
 })
 export class NavbarComponent implements OnInit {
   @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
-  @Output() dialogresult = new EventEmitter<string>();
   constructor(private dialog: MatDialog, private route: Router) {}
 
   dialog_create_asset() {
@@ -36,10 +35,9 @@ export class NavbarComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((res) => {
       this.route.navigate(['/dashboard'], {
-        state: { example: this.dialogresult.emit(res.data) },
+        state: { example: res.data },
       });
       console.log(res.data, '1');
-      this.dialogresult = res.data;
     });
   }
 
