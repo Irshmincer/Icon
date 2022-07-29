@@ -12,3 +12,39 @@
     font-size: 2rem;
     color: lightgray;
 }
+.norecord {
+
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    margin-left: 11.4rem;
+
+    background-color: white;
+}
+table {
+    width: 80%;
+    margin-left: 13em;
+    margin-top: 3em;
+    background-color: white;
+}
+
+
+th {
+    border-bottom-color: #e2e2e2;
+    color: black;
+        font-size: 20px;
+        font-family: 'Bebas Neue', cursive;
+    }
+    
+    td {
+        color: black;
+        font-size: 12px;
+        font: normal normal 600 18px Proxima Soft;
+}
+
+.heading {
+margin-left: 7.5em;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+}

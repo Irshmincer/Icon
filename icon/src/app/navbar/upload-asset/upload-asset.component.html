@@ -1,0 +1,98 @@
+ <div  style="display: flex; padding: 20px;"  >
+    <h6  >Create Assets</h6> 
+    <span class="example-spacer"></span> 
+      <button  mat-button type="button"  class="btn btn-primary ">
+          <mat-icon class="icon">add</mat-icon><span class="p">ADD FILES</span>
+         </button>
+    </div>
+   <div >
+        <form [formGroup]="invoiceForm">
+          <table>
+            <thead>
+              <tr>
+                <th style="width:150px; max-width:150px;  color: #6f6f6f; ">TITLE</th>
+                <th style="width:120px; max-width:120px;  color: #6f6f6f; ">TRACK VERSION</th>
+                <th style="width:120px; max-width:120px;  color: #6f6f6f; ">TYPE</th>
+                <th style="width:120px; max-width:120px;  color: #6f6f6f; ">FILE</th>
+                <th style="width:50px; max-width:50px;  color: #6f6f6f; "></th>
+              </tr>
+            </thead>
+            <tbody formArrayName="Rows">
+              <tr
+                *ngFor="let itemrow of formArr.controls; let i = index; let l = last"
+                [formGroupName]="i"
+              >
+                <td>
+                    <mat-form-field class="example-full-width" appearance="legacy">
+                      <mat-label class="label">Title</mat-label>
+                        <input matInput class="white"   formControlName="name" placeholder="Title" class="form-control" required />
+                    </mat-form-field>
+                </td>
+        
+                <td>
+                  <mat-form-field appearance="legacy">
+                    <mat-label class="label">Track Version</mat-label>
+                    <input matInput class="white"  formControlName="track"  placeholder="Enter Version" class="form-control" />
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="legacy">
+                    <mat-label  class="label">Select an option</mat-label>
+                    <mat-select class="white" formControlName="type">
+                      <mat-option>None</mat-option>
+                      <mat-option value="Track">Track </mat-option>
+                      <mat-option value="Classical Track">Classical Track</mat-option>
+                      <mat-option value="Music Video">Music Video</mat-option>
+                      <mat-option value="Ringtone">Ringtone</mat-option>
+
+                    </mat-select>
+                  </mat-form-field>
+
+                 
+                </td>
+                <td>
+
+                  <button style="    background-color: white;
+                  border: none;margin-left: -8px;"type="button" (click)="fileInput.click()">
+                    <div><img  src="../../../assets/images/upload.svg  " /><span style="margin-top:-5px">FILE UPLOAD</span> </div>
+                    <input #fileInput type="file"  (change)="onFileSelected($event)"  style="display:none;" />
+                  </button>
+                  <!-- <div>
+                    <div>
+    
+                      <img  src="../../../assets/images/upload.svg  " />
+                    </div>
+                    <p style="margin-top: -1.5em; margin-left: 3em ;font-size: 16px; color: #000000;         font-family: 'NTR', sans-serif;
+                    " type="file">FILE UPLOAD</p>
+                  </div> -->
+                </td>
+        
+                <td>
+                  <button
+                    mat-button
+                    style="margin-bottom: 1em; margin-left: 5em;
+                    "
+                    *ngIf="formArr.controls.length >= 1"
+                    (click)="deleteRow(i)"
+                    class="btn btn-danger"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <button mat-button type="button" (click)="addNewRow()" class="btn btn-primary">
+         <mat-icon class="icon">add</mat-icon><span class="p">Add new Row</span>
+        </button>
+        <br />
+        <br />
+    </div>
+    
+    <div class="newone">
+      <button class="color" mat-button [mat-dialog-close]>CANCEL</button>
+      <button class="color submit"  mat-flat-button (click)="onSubmit()" >CREATE ASSET</button>
+    
+    </div> 
+     

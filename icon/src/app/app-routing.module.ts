@@ -8,6 +8,12 @@ const routes: Routes = [
       import('./login/login.module').then((x) => x.LoginModule),
     pathMatch: 'prefix', // 'full' will not trigger child routes,
   },
+  { path: 'dashboard', redirectTo: '' },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./navbar/navbar.module').then((x) => x.NavbarModule),
+  },
 ];
 
 @NgModule({

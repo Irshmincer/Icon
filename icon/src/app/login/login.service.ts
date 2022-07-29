@@ -40,4 +40,19 @@ export class LoginService {
       requestOptions
     );
   }
+
+  getasset(name: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        Cookie:
+          'connect.sid=s%3AWZ3AGpPxQUspiLw7rgo3uQjSy6uC8VLo.T3TkJ3Y5Q%2FEmjGsX1hr8Ade7gBARJpaag1yrhKhKu84',
+      }),
+    };
+
+    return this.http.post(
+      'https://next.fugamusic.com/api/v1/assets',
+      name,
+      httpOptions
+    );
+  }
 }

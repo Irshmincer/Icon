@@ -1,0 +1,84 @@
+<mat-toolbar>
+    <div>
+        <img (click)="navToHomePage()" class="logo" src="../../assets/images/image.svg" />
+      </div>
+    
+     
+      <!-- <button mat-button class="catalog" [matMenuTriggerFor]="menu">
+        Catalog<mat-icon class="customIconSize">arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu class="mat-menu" #menu="matMenu">
+        <button mat-menu-item ><span class="text">Products</span></button>
+        <button mat-menu-item><span class="text">Assets</span></button>
+        <button mat-menu-item><span class="text">Artists</span></button>
+        <button mat-menu-item><span class="text">Labels</span></button>
+        <button mat-menu-item><span class="text">People</span></button>
+        <button mat-menu-item><span class="text">Publishers</span></button>
+      </mat-menu>
+    
+      <div class="margin-Analytics">
+        <button class="top-nav-button catalog" mat-button>Analytics</button>
+      </div>
+      <div class="margin-Accounting">
+        <button class="top-nav-button catalog" mat-button>Accounting</button>
+      </div>
+    
+      <div class="margin-Accounting">
+        <button
+          class="top-nav-button catalog"
+          mat-button
+          [matMenuTriggerFor]="connections"
+        >
+          Connections<mat-icon class="customIconSize">arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu class="mat-menu" #connections="matMenu">
+          <button mat-menu-item><span class="text">DSP Connections</span></button>
+        </mat-menu>
+      </div>
+    
+      
+      <div class="top-bar">
+        <div class="search-container">
+          
+          <input class="search" type="search" placeholder="Search in Products">
+        </div>
+      </div>
+    -->
+    <span class="example-spacer"></span>
+    
+      <button
+
+        mat-stroked-button
+        class="button-right-hand-side text"
+        [matMenuTriggerFor]="create"
+      >
+        <mat-icon class="add ">add</mat-icon><span class="text"> CREATE</span>
+      </button>
+      <mat-menu class="mat-menu mat-menu-create" #create="matMenu">
+       
+        <button mat-menu-item (click)="dialog_create_asset()">
+          <img class="create_image" src="../../assets/images/music.svg" /><span
+            class="text create"
+            >Asset</span
+          >
+        </button>
+       
+    
+      </mat-menu>
+    
+      <button mat-mini-fab [matMenuTriggerFor]="settings" class="fab_button">
+        <span class="span text">SC</span>
+      </button>
+    
+      
+    
+      <mat-menu class="mat-menu" #settings="matMenu">
+        
+        <button mat-menu-item (click)="navToLogin()"><span class="text">Logout</span></button>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div style="margin-top: 3em;">
+
+      <router-outlet></router-outlet>
+    </div>

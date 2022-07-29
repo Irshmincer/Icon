@@ -5,7 +5,16 @@ import { LoginComponent } from './login.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'assetList', component: AssetListComponent },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('../asset-list/asset-list.module').then((x) => x.AssetListModule),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('../navbar/navbar.module').then((x) => x.NavbarModule),
+  },
 ];
 
 @NgModule({

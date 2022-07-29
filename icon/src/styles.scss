@@ -1,4 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+
+    background: #eee;
+    font-family: Nunito Sans, sans-serif;
+
+}
+
+.mat-expansion-panel-header-description,
+.mat-expansion-indicator::after {
+    color: rgb(12 10 10 / 70%);
+}
+
+
+
+p,
+h2,
+h6,
+table,
+button,
+input {
+    color: black;
+}
+
+mat-dialog-container {
+    background-color: white !important;
+    padding: 0px !important;
+
+}
+
+.mat-input-element {
+    caret-color: #070707;
+}

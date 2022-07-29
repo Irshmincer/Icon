@@ -1,0 +1,121 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgb(253, 253, 253);
+}
+
+::ng-deep .mat-form-field-underline::before,
+::ng-deep .mat-form-field-ripple {
+    background-color: black !important;
+}
+
+::ng-deep .mat-form-field-underline,
+::ng-deep .mat-form-field-ripple {
+    background-color: black !important;
+}
+
+.icon {
+    color: #000000;
+}
+
+img {
+margin-left: 20px;
+
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.p {
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400
+}
+h6 {
+font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400
+}
+
+tr{
+    margin-left: 1px;
+}
+
+.newone {
+    flex: 0 0 auto;
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #eee;
+    margin-top: 10px;
+}
+
+.color {
+    color: black;
+    font-size: 24px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400
+}
+mat-dialog-container {
+    background: white;
+}
+
+span {
+    color: black;
+    font-size: 0.875rem;
+    font-family: Nunito Sans, sans-serif;
+    font-weight: 400;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead th {
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+        font-family: 'Bebas Neue', cursive;
+        font-weight: 200
+
+    }
+    
+    .label {
+        color: #808080;
+        font-family: 'NTR', sans-serif;
+        font-size: 20px;
+      
+    }
+    
+    .white {
+        color: black;
+        font-family: Proxima Soft;
+      
+
+
+}
+
+
+
+::ng-deep .mat-form-field-label {
+    color: #000 !important;
+}
+::ng-deep .mat-select-value {
+    color: #000 !important;
+}
+
+th .text {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+}
+
+
+
+
+
+.submit {
+    background-color: white;
+}

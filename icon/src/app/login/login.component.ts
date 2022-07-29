@@ -12,8 +12,8 @@ import { LoginService } from './login.service';
 export class LoginComponent implements OnInit {
   cookieValue!: string;
   registration = this.fb.group({
-    email: ['Scotty san', Validators.required],
-    password: ['ILoveAudiotube1', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
   });
   constructor(
     private service: LoginService,
@@ -29,8 +29,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     const form = {
-      name: 'Scotty san',
+      name: 'sathish',
       password: 'ILoveAudiotube1',
+      secure: true,
+      authType: 'session_and_jwt',
     };
     this.service.getLogin(form).subscribe((x) => {
       console.log('Headers List');
@@ -39,7 +41,7 @@ export class LoginComponent implements OnInit {
       console.log('Setcookie value = ' + x.headers.get('Set-Cookie'));
 
       console.log(this.cookieValue);
-      this.route.navigate(['/assetList']);
+      this.route.navigate(['/dashboard']);
     });
   }
 }

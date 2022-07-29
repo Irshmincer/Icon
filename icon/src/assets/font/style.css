@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Proxima Soft';
+    src: local('Proxima Soft SemiBold'), local('Proxima-Soft-SemiBold'),
+        url('ProximaSoft-SemiBold.woff2') format('woff2'),
+        url('ProximaSoft-SemiBold.woff') format('woff'),
+        url('ProximaSoft-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
