@@ -38,12 +38,12 @@
                 <td>
                   <mat-form-field appearance="legacy">
                     <mat-label  class="label">Select an option</mat-label>
-                    <mat-select class="white">
+                    <mat-select class="white" formControlName="type">
                       <mat-option>None</mat-option>
-                      <mat-option value="option1">Track </mat-option>
-                      <mat-option value="option2">Classical Track</mat-option>
-                      <mat-option value="option3">Music Video</mat-option>
-                      <mat-option value="option4">Ringtone</mat-option>
+                      <mat-option value="Track">Track </mat-option>
+                      <mat-option value="Classical Track">Classical Track</mat-option>
+                      <mat-option value="Music Video">Music Video</mat-option>
+                      <mat-option value="Ringtone">Ringtone</mat-option>
 
                     </mat-select>
                   </mat-form-field>
@@ -51,14 +51,20 @@
                  
                 </td>
                 <td>
-                  <div>
+
+                  <button style="    background-color: white;
+                  border: none;margin-left: -8px;"type="button" (click)="fileInput.click()">
+                    <div><img  src="../../../assets/images/upload.svg  " /><span style="margin-top:-5px">FILE UPLOAD</span> </div>
+                    <input #fileInput type="file"  (change)="onFileSelected($event)"  style="display:none;" />
+                  </button>
+                  <!-- <div>
                     <div>
     
                       <img  src="../../../assets/images/upload.svg  " />
                     </div>
                     <p style="margin-top: -1.5em; margin-left: 3em ;font-size: 16px; color: #000000;         font-family: 'NTR', sans-serif;
-                    ">FILE UPLOAD</p>
-                  </div>
+                    " type="file">FILE UPLOAD</p>
+                  </div> -->
                 </td>
         
                 <td>
@@ -85,7 +91,7 @@
     </div>
     
     <div class="newone">
-      <button class="color" mat-button>CANCEL</button>
+      <button class="color" mat-button [mat-dialog-close]>CANCEL</button>
       <button class="color submit"  mat-flat-button (click)="onSubmit()" >CREATE ASSET</button>
     
     </div> 

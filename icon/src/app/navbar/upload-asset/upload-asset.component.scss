@@ -36,6 +36,10 @@ font-size: 24px;
     font-weight: 400
 }
 
+tr{
+    margin-left: 1px;
+}
+
 .newone {
     flex: 0 0 auto;
     display: flex;
@@ -74,17 +78,22 @@ table thead th {
     font-size: 18px;
         font-family: 'Bebas Neue', cursive;
         font-weight: 200
+
     }
     
     .label {
         color: #808080;
         font-family: 'NTR', sans-serif;
         font-size: 20px;
+      
     }
     
     .white {
         color: black;
         font-family: Proxima Soft;
+      
+
+
 }
 
 
@@ -100,8 +109,12 @@ th .text {
     color: rgb(0, 0, 0);
     font-size: 20px;
     font-family: 'Bebas Neue', cursive;
-    font-weight: 400
+    font-weight: 400;
 }
+
+
+
+
 
 .submit {
     background-color: white;

@@ -142,21 +142,19 @@ input[type=text]:focus {
 
 
 .fab_button {
-    width: 24px;
-    height: 24px;
-    line-height: 14px;
-    font-size: 14px;
+    width: 35px;
+    height: 35px;
+    
     margin-right: 0.5rem;
 
 
     &::ng-deep .mat-button-wrapper {
-        line-height: 14px;
         padding: 0;
 
         .span {
             color: #020202;
             font-weight: 900;
-            font-size: 10px;
+            font-size: 24px;
             
         }
 

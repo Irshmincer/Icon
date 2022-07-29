@@ -17,9 +17,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { DeleteComponent } from './delete/delete.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [AssetDetailComponent],
+  declarations: [AssetDetailComponent, DeleteComponent],
   imports: [
     CommonModule,
     AssetDetailRoutingModule,
@@ -35,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatInputModule,
     MatTableModule,
     MatButtonModule,
+    MatDialogModule,
   ],
 })
 export class AssetDetailModule {}

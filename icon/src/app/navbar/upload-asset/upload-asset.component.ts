@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/login/login.service';
 
 @Component({
@@ -9,29 +11,47 @@ import { LoginService } from 'src/app/login/login.service';
 })
 export class UploadAssetComponent implements OnInit {
   public invoiceForm!: FormGroup;
-
-  @Input() name: string = '';
-  @Input() track: string = '';
-  constructor(private _fb: FormBuilder, private service: LoginService) {}
+  name: string = '';
+  track: string = '';
+  type: string = '';
+  constructor(
+    private _fb: FormBuilder,
+    private dialogRef: MatDialogRef<UploadAssetComponent>,
+    private route: Router
+  ) {}
   ngOnInit() {
     this.invoiceForm = this._fb.group({
       Rows: this._fb.array([this.initRows()]),
     });
   }
 
-  selected = 'option2';
+  @Output() data = new EventEmitter<string>();
+  @Output() newitemEvent = new EventEmitter<string>();
 
+  selected = 'option2';
+  result: any;
   get formArr() {
     return this.invoiceForm.get('Rows') as FormArray;
   }
 
-  form = new FormGroup({
-    name: new FormControl(),
-    track: new FormControl(),
-  });
+  onFileSelected(event: Event) {
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      console.log(target.files[0].name);
+      this.invoiceForm.value['name'] = target.files[0].name;
+    }
+
+    // <--- File Object for future use.
+  }
 
   initRows() {
-    return this.form;
+    const form = this._fb.group({
+      name: `${this.name}`,
+      track: `${this.track}`,
+      type: `${this.type}`,
+    });
+
+    return form;
   }
 
   addNewRow() {
@@ -51,7 +71,17 @@ export class UploadAssetComponent implements OnInit {
     // this.service.getasset(form).subscribe((x) => {
     //   console.log(x);
     // });
-    this.name = this.form.value['name'];
-    console.log(this.name);
+    const form = this.invoiceForm.value['Rows'][0];
+    const name = form.name;
+    const type = form.type;
+    const track = form.track;
+
+    let dialogRef = this.dialogRef.close({
+      data: {
+        name: `${name}`,
+        type: `${type}`,
+        track: `${track}`,
+      },
+    });
   }
 }

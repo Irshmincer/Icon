@@ -6,7 +6,11 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { MatAccordion } from '@angular/material/expansion';
+import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { DeleteComponent } from './delete/delete.component';
 
 @Component({
   selector: 'app-asset-detail',
@@ -21,11 +25,20 @@ export class AssetDetailComponent implements OnInit {
   sticky: boolean = false;
 
   panelOpenState = false;
-  constructor() {}
+  constructor(private router: Router, private dialog: MatDialog) {}
+
   dataSource3 = ELEMENT_DATA_3;
   displayedColumns3: string[] = ['language', 'AssetTitle', 'TrackVersion'];
 
   ngOnInit(): void {}
+
+  dialog_delete() {
+    console.log('26');
+    this.dialog.open(DeleteComponent, {
+      width: '350px',
+      height: '250px',
+    });
+  }
 }
 
 const ELEMENT_DATA_3: PeriodicElement_3[] = [];
