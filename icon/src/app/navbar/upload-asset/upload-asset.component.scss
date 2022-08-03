@@ -70,7 +70,7 @@ span {
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 94%;
 }
 
 table thead th {
@@ -119,3 +119,8 @@ th .text {
 .submit {
     background-color: white;
 }
+
+table:first-child {
+    margin-left: 23px;
+  }
+

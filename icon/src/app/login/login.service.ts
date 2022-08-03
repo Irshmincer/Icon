@@ -12,18 +12,37 @@ export class LoginService {
   constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   getLogin(name: any) {
-    // const headerDict = {
-    //   'Content-Type': 'application/json',
-    //   'access-control-expose-headers': 'Set-Cookie',
-    // };
+    const headerDict = {
+      'Content-Type': 'application/json',
+      'Access-Control-Expose-Headers': '*'
+    };
 
-    // const requestOptions = {
-    //   headers: new HttpHeaders(headerDict),
-    // };z
-
-    return this.http.post(this.baseUrl + '/login', name, {
+    return this.http.post('http://localhost:8080/signin', name, {
       observe: 'response',
+      withCredentials: true,
+
+      headers: headerDict,
     });
+  }
+
+  getvalue() {
+    const headerDict = {
+      'Content-Type': 'application/json',
+    };
+
+    return this.http.get('http://localhost:8080/welcome', {
+      observe: 'response',
+      withCredentials: true,
+
+      headers: headerDict,
+    });
+  }
+
+  getlogout(){
+    const headerDict = {
+      'Content-Type': 'application/json',
+    };
+    return this.http.get('http://localhost:8080/logout', {headers: headerDict});
   }
 
   getAsset() {

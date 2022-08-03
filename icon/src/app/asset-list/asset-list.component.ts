@@ -22,14 +22,13 @@ export class AssetListComponent implements OnInit {
 
   ngOnInit(): void {
     //this.getAssetList();
-
-    ELEMENT_DATA.push({
-      name: this.result['example']['name'],
-      type: this.result['example']['type'],
-      track: this.result['example']['track'],
-      ISRC: '-',
-    });
-    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+    // ELEMENT_DATA.push({
+    //   name: this.result['example']['name'],
+    //   type: this.result['example']['type'],
+    //   track: this.result['example']['track'],
+    //   ISRC: '-',
+    // });
+    // this.dataSource = new MatTableDataSource(ELEMENT_DATA);
   }
 
   getAssetList() {

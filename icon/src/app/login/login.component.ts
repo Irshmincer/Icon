@@ -21,27 +21,45 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private cookieService: CookieService
   ) {
-    this.cookieService.set('Test', 'sample values are stored in cookies');
-    this.cookieValue = this.cookieService.get('Test');
+  
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    
+  }
 
   login() {
     const form = {
-      name: 'sathish',
-      password: 'ILoveAudiotube1',
-      secure: true,
-      authType: 'session_and_jwt',
+      username: 'user2',
+      password: 'password2',
     };
     this.service.getLogin(form).subscribe((x) => {
       console.log('Headers List');
-
+      console.log(x);
+      console.log(x.headers.keys());
       console.log('content-type =' + x.headers.get('Content-type'));
       console.log('Setcookie value = ' + x.headers.get('Set-Cookie'));
+      this.cookieValue = this.cookieService.get('session_token');
 
       console.log(this.cookieValue);
       this.route.navigate(['/dashboard']);
+      this.get();
+      this.logout();
+      
     });
+  }
+
+  logout(){
+    this.service.getlogout().subscribe((x) => {
+      console.log(x);
+    });
+  }
+
+
+  get(){
+    this.service.getvalue().subscribe(x =>{
+      console.log(x)
+    })
   }
 }

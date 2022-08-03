@@ -54,7 +54,7 @@
 
                   <button style="    background-color: white;
                   border: none;margin-left: -8px;"type="button" (click)="fileInput.click()">
-                    <div><img  src="../../../assets/images/upload.svg  " /><span style="margin-top:-5px">FILE UPLOAD</span> </div>
+                    <div style="display: flex;"><img  src="../../../assets/images/upload.svg  " /><span style="margin-top:5px">FILE UPLOAD</span> </div>
                     <input #fileInput type="file"  (change)="onFileSelected($event)"  style="display:none;" />
                   </button>
                   <!-- <div>
@@ -70,13 +70,17 @@
                 <td>
                   <button
                     mat-button
-                    style="margin-bottom: 1em; margin-left: 5em;
+                    style="margin-bottom: 1em; margin-right: -16rem;
                     "
                     *ngIf="formArr.controls.length >= 1"
                     (click)="deleteRow(i)"
                     class="btn btn-danger"
                   >
-                    <mat-icon>delete</mat-icon>
+                  <span style="margin-left: 2em;">
+
+                    <mat-icon style="  margin-top: 1em;
+                  ">delete</mat-icon>
+                  </span>
                   </button>
                 </td>
               </tr>
