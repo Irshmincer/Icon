@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './login.service';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  cookieValue!: string;
+  url = 'http://localhost:8000';
+
+  baseUrl = 'https://next.fugamusic.com/api/v2';
+
+  iconURL = 'https://iconbackends.fidisys.com';
+
   registration = this.fb.group({
     email: ['', Validators.required],
     password: ['', Validators.required],
@@ -18,48 +21,25 @@ export class LoginComponent implements OnInit {
   constructor(
     private service: LoginService,
     private route: Router,
-    private fb: FormBuilder,
-    private cookieService: CookieService
-  ) {
-  
-  }
+    private fb: FormBuilder
+  ) {}
 
-  ngOnInit(): void {
-
-    
-  }
+  ngOnInit(): void {}
 
   login() {
     const form = {
-      username: 'user2',
-      password: 'password2',
+      name: `${this.registration.value['email']}`,
+      password: `${this.registration.value['password']}`,
     };
-    this.service.getLogin(form).subscribe((x) => {
+    this.service.getLogin(form).subscribe((x: any) => {
       console.log('Headers List');
-      console.log(x);
-      console.log(x.headers.keys());
+
+      console.log(x.body['token']);
       console.log('content-type =' + x.headers.get('Content-type'));
       console.log('Setcookie value = ' + x.headers.get('Set-Cookie'));
-      this.cookieValue = this.cookieService.get('session_token');
 
-      console.log(this.cookieValue);
-      this.route.navigate(['/dashboard']);
-      this.get();
-      this.logout();
-      
+      localStorage.setItem('localstorage', `${x.body['token']}`);
+      this.route.navigate(['/dashboard'], { state: { data: x.body['token'] } });
     });
-  }
-
-  logout(){
-    this.service.getlogout().subscribe((x) => {
-      console.log(x);
-    });
-  }
-
-
-  get(){
-    this.service.getvalue().subscribe(x =>{
-      console.log(x)
-    })
   }
 }

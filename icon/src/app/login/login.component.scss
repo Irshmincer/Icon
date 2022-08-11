@@ -33,10 +33,13 @@ mat-card {
     width: 94%;
     padding: 10px;
     background-color: #000000;
+    display: flex;
+    justify-content: center;
 }
 
 img {
-    max-width: 250px;
+    max-width: 190px;
+    
 }
 
 mat-form-field {

@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { LoginService } from '../login/login.service';
+import { SharedServiceService } from '../sharedService/shared-service.service';
 
 @Component({
   selector: 'app-asset-list',
@@ -14,9 +15,14 @@ export class AssetListComponent implements OnInit {
   @Input() public resultGridList: Array<any> = [];
   data = [];
   result: any;
-  constructor(private service: LoginService, private router: Router) {
+  constructor(
+    private service: LoginService,
+    private router: Router,
+    private sharedService: SharedServiceService
+  ) {
     const value = this.router.getCurrentNavigation()?.extras.state;
     this.result = value;
+    console.log(this.result);
   }
   @ViewChild(MatTable, { static: true }) table!: MatTable<any>;
 
@@ -29,17 +35,27 @@ export class AssetListComponent implements OnInit {
     //   ISRC: '-',
     // });
     // this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+    this.assetListPage();
   }
 
-  getAssetList() {
-    this.service.getAsset().subscribe((x) => console.log(x));
-  }
+  // getAssetList() {
+  //   this.service.getAsset().subscribe((x) => console.log(x));
+  // }
 
   detailspage() {
     console.log('82');
     this.router.navigate(['dashboard/assets']);
   }
+
+  assetListPage() {
+    this.sharedService.ListAsset().subscribe((result) => {
+      console.log(result);
+    });
+  }
 }
+
+
 
 const ELEMENT_DATA: PeriodicElement[] = [
   { name: 'Test1', type: 'Sample1', track: 'Track', ISRC: '-' },

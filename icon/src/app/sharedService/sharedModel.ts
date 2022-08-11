@@ -92,3 +92,15 @@ export interface Audio {
   number_of_channels?: any;
   sampling_rate?: any;
 }
+
+
+
+
+
+export interface AssetListPage {
+  page: number;
+  page_size: number;
+  total: number;
+  asset: assetResult[];
+}
+

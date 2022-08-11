@@ -9,9 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 
-import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from './login.service';
-import axios, { Axios } from 'axios';
 @NgModule({
   declarations: [LoginComponent],
   imports: [
@@ -24,6 +22,6 @@ import axios, { Axios } from 'axios';
     MatCardModule,
     ReactiveFormsModule,
   ],
-  providers: [CookieService, LoginService],
+  providers: [LoginService],
 })
 export class LoginModule {}
